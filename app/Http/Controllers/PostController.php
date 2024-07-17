@@ -8,20 +8,20 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      */
-    public function index(){
-        // $posts = Post::all();
-        $posts = Post::where('user_id', Auth::user()->id);
-        dd($posts);
+    public function index()
+    {
+        $posts = Post::where('user_id', Auth::user()->id)->get();
         return view('posts.index', compact('posts'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(){
+    public function create()
+    {
         return view('posts.create');
     }
 
@@ -33,44 +33,72 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-
         ]);
-        Post::create($request->all());
+
+        $post = new Post();
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->user_id = Auth::id();
+        $post->save();
+
         return redirect()->route('posts.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Post $post){
-        if (Auth::id() != $post->user_id){
+    public function show(Post $post)
+    {
+        if (Auth::id() != $post->user_id) {
             abort(403);
         }
-        // $posts = Post::all();
+
         return view('posts.show', compact('post'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Post $post)
     {
-        //
+        if (Auth::id() != $post->user_id) {
+            abort(403);
+        }
+
+        return view('posts.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        if (Auth::id() != $post->user_id) {
+            abort(403);
+        }
+
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->save();
+
+        return redirect()->route('posts.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Post $post)
     {
-        //
+        if (Auth::id() != $post->user_id) {
+            abort(403);
+        }
+
+        $post->delete();
+        return redirect()->route('posts.index');
     }
 }
