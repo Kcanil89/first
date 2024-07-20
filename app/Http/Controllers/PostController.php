@@ -65,7 +65,7 @@ class PostController extends Controller
             abort(403);
         }
 
-        return view('posts.edit', compact('post'));
+        return view('posts.update', compact('post'));
     }
 
     /**
