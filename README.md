@@ -1,6 +1,6 @@
 # Basic Blog Application
 
-**Git Repository URL:** https://github.com/Kcanil89/first
+**Git Repository URL:** [Link to Git Repo](https://github.com/Kcanil89/first)
 
 ## Overview
 
@@ -17,33 +17,30 @@ This project is a simple blog application built with Laravel. It demonstrates th
 ## Installation
 
 1. Clone the repository:
-   git clone https://github.com/Kcanil89/first
-   cd first
+   *git clone https://github.com/Kcanil89/first* <br>
+   *cd first*
 
 ## Install the dependencies:
 
-composer install
-npm install
+*composer install* <br>
+*npm install*
 
 ## Copy the .env file and configure the database:
 
-cp .env.example .env
+*cp .env.example .env*
 
-## Generate the application key:
-
-php artisan key:generate
 
 ## Run the migrations:
 
-php artisan migrate
+*php artisan migrate*
 
 ## Start the development server:
 
-php artisan serve
+*php artisan serve*
 
-## Implementation Details
+# Implementation Details
 
-# Laravel Authentication
+## Laravel Authentication
 
 Laravel's built-in authentication features were implemented to manage user registration, login, and logout functionalities. This was achieved by using the php artisan make:auth command, which scaffolds all necessary views, routes, and controllers.
 
@@ -75,26 +72,24 @@ Bootstrap is integrated to enhance the UI and provide a responsive layout. Key c
 Buttons for actions like create, update, delete, and view
 
 
-## Challenges Faced
-# Authentication Setup:
+# Challenges Faced
+## Authentication Setup:
 
 Implementing authentication required careful configuration to ensure all routes were protected and users could only manage their own posts.
 
-# Form Validation:
+## Form Validation:
 
 Properly validating form inputs and displaying error messages was crucial for a good user experience.
 
-# Bootstrap Integration:
+## Bootstrap Integration:
 
 Ensuring all elements were responsive and styled correctly with Bootstrap involved tweaking the default classes and layout.
 
-# Error Handling:
+## Error Handling:
 
 Implementing comprehensive error handling to manage scenarios like invalid inputs and database issues.
 
-## Conclusion
+# Conclusion
 This project served as a practical implementation of Laravel's core features, combined with a CRUD application for blog posts. It highlights the simplicity and power of Laravel in building web applications with authentication and basic content management functionalities.
-
-Feel free to explore the repository and contribute to improving the application. If you encounter any issues or have suggestions, please open an issue or submit a pull request.
 
 ## Author: Anil Khattri
