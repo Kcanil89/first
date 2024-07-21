@@ -6,6 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
+                <button btn btn-primary><a href="/posts">Go to all posts</a></button>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +14,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!')  }}
                 </div>
             </div>
         </div>

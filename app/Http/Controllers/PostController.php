@@ -13,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::where('user_id', Auth::user()->id)->get();
+        $posts = Post::all();
         return view('posts.index', compact('posts'));
     }
 
@@ -25,23 +25,19 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'content' => 'required',
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
         ]);
-
-        $post = new Post();
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->user_id = Auth::id();
-        $post->save();
-
-        return redirect()->route('posts.index');
+    
+        Post::create([
+            'title' => $request->title,
+            'content' => $request->content,
+        ]);
+    
+        return redirect()->route('posts.index')->with('status', 'Post created successfully!');
     }
 
     /**
@@ -49,9 +45,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        if (Auth::id() != $post->user_id) {
-            abort(403);
-        }
+        $posts = Post::all();
 
         return view('posts.show', compact('post'));
     }
@@ -61,9 +55,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        if (Auth::id() != $post->user_id) {
-            abort(403);
-        }
+        $posts = Post::all();
 
         return view('posts.update', compact('post'));
     }
@@ -73,9 +65,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        if (Auth::id() != $post->user_id) {
-            abort(403);
-        }
+        $posts = Post::all();
 
         $request->validate([
             'title' => 'required',
@@ -94,9 +84,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        if (Auth::id() != $post->user_id) {
-            abort(403);
-        }
+        $posts = Post::all();
 
         $post->delete();
         return redirect()->route('posts.index');
