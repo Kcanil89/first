@@ -5,8 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-                <button btn btn-primary><a href="/posts">Go to all posts</a></button>
+                <div class="card-header">{{ __('Welcome to Dashboard') }}</div>
+                <br>
+                <button class="btn btn-primary">
+                <a href="/posts" style="color: white; text-decoration: none;">Go to all posts</a>
+                </button>
 
                 <div class="card-body">
                     @if (session('status'))

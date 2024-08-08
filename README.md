@@ -44,32 +44,29 @@ This project is a simple blog application built with Laravel. It demonstrates th
 
 Laravel's built-in authentication features were implemented to manage user registration, login, and logout functionalities. This was achieved by using the php artisan make:auth command, which scaffolds all necessary views, routes, and controllers.
 
-## CRUD Operations
-# Create Post:
+# CRUD Operations
+## Create Post:
 
 A form was created using Blade templating to accept the post title and content.
 The form data is validated and then saved to the database.
 
-# Read Post:
+## Read Post:
 
 Posts are retrieved from the database and displayed in a list format.
 Individual post details can be viewed on a separate page.
 
-# Update Post:
+## Update Post:
 
 An edit form pre-filled with the existing post data allows users to update the title and content.
 The updated data is validated and saved back to the database.
 
-# Delete Post:
+## Delete Post:
 
 Users can delete a post, which removes the record from the database.
 
 ## Frontend Design
 Bootstrap is integrated to enhance the UI and provide a responsive layout. Key components used include:
 
-# Cards for displaying posts and forms
-# List groups for listing posts
-Buttons for actions like create, update, delete, and view
 
 
 # Challenges Faced
