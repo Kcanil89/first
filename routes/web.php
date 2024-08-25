@@ -15,20 +15,11 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth']], function(){
     Route::resource('posts', PostController::class);
     Route::resource('photos', PhotoController::class);
+    Route::resource('/users', UserController::class);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 });
 
 
-
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-    
-    Route::resource('/users', UserController::class);
-
-    Route::resource('/posts', AdminPostController::class, [
-        'as' => 'admin'  // This will name the routes as admin.posts.*
-    ]);
-
-});
 
 
 Auth::routes();

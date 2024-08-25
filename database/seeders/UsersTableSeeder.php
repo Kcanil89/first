@@ -15,24 +15,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        // Create an admin user with a status
-        User::create([
-            'name' => 'Admin User',
-            'email' => 'admin@example.com',
-            'password' => Hash::make('password'),
-            'is_admin' => true,
-            'status' => 'active', // New column
-        ]);
+        User::factory()->count(5)->create();
 
-        // Create a regular user with a status
-        User::create([
-            'name' => 'Regular User',
-            'email' => 'user@example.com',
-            'password' => Hash::make('password'),
-            'is_admin' => false,
-            'status' => 'inactive', // New column
-        ]);
-
-        // Optionally, create more users
     }
 }
