@@ -8,11 +8,11 @@ This project is an enhanced version of a basic blog application built with Larav
 
 ## Features
 
--User Authentication: Secure registration, login, and logout functionality using Laravel's authentication system.
--CRUD Operations: Full CRUD (Create, Read, Update, Delete) capabilities for blog posts and users.
--Admin Panel: A dedicated admin panel for managing users and blog posts, accessible only by users with the 'admin' role.
--Role-Based Access Control: Users are assigned roles (admin, author, user) that determine their permissions within the application.
--Responsive Design: The UI is built using Bootstrap, ensuring that the application is accessible and looks great on all devices.
+- User Authentication: Secure registration, login, and logout functionality using Laravel's authentication system.
+- CRUD Operations: Full CRUD (Create, Read, Update, Delete) capabilities for blog posts and users.
+- Admin Panel: A dedicated admin panel for managing users and blog posts, accessible only by users with the 'admin' role.
+- Role-Based Access Control: Users are assigned roles (admin, author, user) that determine their permissions within the application.
+- Responsive Design: The UI is built using Bootstrap, ensuring that the application is accessible and looks great on all devices.
 
 ## Installation
 
