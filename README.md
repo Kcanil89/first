@@ -1,10 +1,10 @@
 # Basic Blog Application
 
-**Git Repository URL:** [Link to Git Repo](https://github.com/Kcanil89/first/tree/feature/auth-admin-panel)
+**Git Repository URL:** [Link to Git Repo](https://github.com/Kcanil89/first/tree/assignment-3)
 
 ## Overview
 
-This project is an enhanced version of a basic blog application built with Laravel. It incorporates user authentication and an admin panel for managing blog posts and users. The application is designed to be robust and user-friendly, leveraging Laravel's built-in features along with Bootstrap for a modern, responsive UI.
+This project is an enhanced version of a basic blog application built with Laravel. It incorporates API for the ReactJs App.
 
 ## Features
 
@@ -17,7 +17,7 @@ This project is an enhanced version of a basic blog application built with Larav
 ## Installation
 
 1. Clone the repository:
-   *git clone https://github.com/Kcanil89/first/tree/feature/auth-admin-panel* <br>
+   *git clone https://github.com/Kcanil89/first/tree/assignment-3* <br>
    *cd first*
 
 ## Install the dependencies:
@@ -41,8 +41,8 @@ This project is an enhanced version of a basic blog application built with Larav
 # Implementation Details
 
 ## Authentication Setup
-- Implemented user authentication using Laravel UI with Bootstrap. The php artisan ui bootstrap --auth command was used to scaffold the authentication views, routes, and controllers.
-- The master layout was updated to include Bootstrap styling, ensuring a consistent and modern look across the application.
+- A dedicated admin panel allows admins to manage users and blog posts. This panel is protected by a custom AdminMiddleware, ensuring only users with the admin role can access it.
+- Admin routes are grouped together in web.php for better organization and security.
 
 ## Admin Panel
 - Created a dedicated admin panel that allows admins to manage users and blog posts. This panel is protected by a custom AdminMiddleware, ensuring only users with the admin role can access it.
@@ -58,17 +58,7 @@ This project is an enhanced version of a basic blog application built with Larav
 
 
 
-# Challenges Faced
-## MongoDB Integration
-Ensuring compatibility with MongoDB on mac was most challenging as it was the starting of the project.
-
-## Role-Based Access
-Implementing middleware and ensuring that only users with the correct roles could access certain functionalities was challenging but crucial for security.
-
-## UI Design
-Ensuring the UI was both functional and aesthetically pleasing required significant effort, particularly in adapting the Bootstrap dashboard template to fit the needs of the application.
-
 # Conclusion
-This project successfully demonstrates the implementation of advanced features in a Laravel application, including authentication, role-based access control, and an admin panel for content management. The use of Bootstrap for frontend design enhances the user experience, making the application both functional and visually appealing.
+This project demonstrates the implementation of advanced features in a Laravel application, including API authentication via Laravel Sanctum, user authentication, role-based access control, and an admin panel for content management. The use of Bootstrap for frontend design enhances the user experience, making the application both functional and visually appealing.
 
 ## Author: Anil Khattri
