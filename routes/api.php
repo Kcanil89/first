@@ -1,10 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
-use App\Model\User;
+use App\Http\Controllers\API\PostController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\UserController;
-use App\Http\Controllers\API\AuthController;
 
-Route::post('/login',  [AuthController::class, 'login']);
-Route::get('/user',  [UserController::class, 'index']);
+// Public API routes for blog posts
+Route::get('/api/posts', [PostController::class, 'index']);
+Route::get('/api/posts/{id}', [PostController::class, 'show']);

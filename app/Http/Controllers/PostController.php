@@ -17,6 +17,12 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
+    public function api_index()
+    {
+        $posts = Post::all();
+        return response()->json($posts);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -49,7 +55,12 @@ class PostController extends Controller
 
         return view('posts.show', compact('post'));
     }
-
+    // Display the specified post
+    public function api_show($id)
+    {
+        $post = Post::findOrFail($id);
+        return response()->json($post);
+    }
     /**
      * Show the form for editing the specified resource.
      */
